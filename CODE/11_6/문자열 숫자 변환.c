@@ -2,8 +2,8 @@
 #define SIZE 10
 int main(void)
 {
-	int ary[SIZE]={0};
-	int ch, i = 0, sum = 0;
+	int ary[SIZE];
+	int ch, i = 0, sum = 0, weight = 1;
 	while(1)
 	{	
 		ch = getchar();
@@ -16,12 +16,15 @@ int main(void)
 		else
 			break;
 	}
-	int Ary[10] = {1, 10, 100, 1000, 10000};
-	int j;
-	for(j=0;j<=i;j++)
+ i--;
+
+	for(;i>=0;i--)
 	{
-		sum += ary[j]*Ary[j];
+		sum += ary[i] * weight;
+		weight *= 10;
 	}
+	sum += 10;
+
 
 	printf("%d", sum);
 	return 0;
